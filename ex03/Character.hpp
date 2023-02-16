@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 02:48:26 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/16 04:30:03 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/16 20:50:20 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ public:
 	Character();
 	Character(const Character& rhs);
 	Character(const std::string& name);
-	~Character();
-	Character& operator=(const Character& rhs);
+	virtual ~Character();
+	virtual Character& operator=(const Character& rhs);
 
-	AMateria* getMateria(int idx) const;
-	std::string const& getName() const;
-	void use(int idx, ICharacter& target);
-	void equip(AMateria* m);
-	void unequip(int idx);
+	virtual AMateria* getMateria(int idx) const;
+	virtual std::string const& getName() const;
+	virtual void use(int idx, ICharacter& target);
+	virtual void equip(AMateria* m);
+	virtual void unequip(int idx);
 
 };
 

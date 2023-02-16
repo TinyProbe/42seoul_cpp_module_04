@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 00:36:59 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/16 05:13:58 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/16 20:50:20 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ public:
 	Ice();
 	Ice(const Ice& rhs);
 	Ice(std::string const& type);
-	~Ice();
-	Ice& operator=(const Ice& rhs);
+	virtual ~Ice();
+	virtual Ice& operator=(const Ice& rhs);
 
-	Ice* clone() const;
-	void use(ICharacter& target);
+	virtual Ice* clone() const;
+	virtual void use(ICharacter& target);
 
 };
 

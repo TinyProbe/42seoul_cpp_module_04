@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:05 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 02:05:23 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/16 20:46:18 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Dog : public Animal {
 public:
 	Dog();
 	Dog(const Dog& rhs);
-	~Dog();
-	Dog& operator=(const Dog& rhs);
+	virtual ~Dog();
+	virtual Dog& operator=(const Dog& rhs);
 
-	void makeSound() const;
+	virtual void makeSound() const;
 
 };
 

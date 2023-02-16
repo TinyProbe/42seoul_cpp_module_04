@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:03 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 19:37:13 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/16 20:47:59 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ public:
 	Animal();
 	Animal(const Animal& rhs);
 	virtual ~Animal();
-	Animal& operator=(const Animal& rhs);
+	virtual Animal& operator=(const Animal& rhs);
 
-	const std::string& getType() const;
+	virtual const std::string& getType() const;
 	virtual void makeSound() const;
 
 };

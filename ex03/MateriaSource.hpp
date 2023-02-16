@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 02:49:36 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/16 05:04:26 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/16 20:50:20 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ class MateriaSource : public IMateriaSource {
 public:
 	MateriaSource();
 	MateriaSource(const MateriaSource& rhs);
-	~MateriaSource();
-	MateriaSource& operator=(const MateriaSource& rhs);
+	virtual ~MateriaSource();
+	virtual MateriaSource& operator=(const MateriaSource& rhs);
 
-	void learnMateria(AMateria* m);
-	AMateria* createMateria(std::string const& type);
+	virtual void learnMateria(AMateria* m);
+	virtual AMateria* createMateria(std::string const& type);
 
 };
 

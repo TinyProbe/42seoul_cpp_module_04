@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:06 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 19:48:49 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/16 20:48:51 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class Cat : public Animal {
 public:
 	Cat();
 	Cat(const Cat& rhs);
-	~Cat();
-	Cat& operator=(const Cat& rhs);
+	virtual ~Cat();
+	virtual Cat& operator=(const Cat& rhs);
 
-	void makeSound() const;
+	virtual void makeSound() const;
 
 };
 
