@@ -6,22 +6,19 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:05 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 02:15:19 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 09:55:52 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() :
-	Animal()
-{
+Dog::Dog() : Animal() {
 	std::cout << "Dog Default constructor called\n";
 	this->type = "Dog";
 }
-Dog::Dog(const Dog& rhs) :
-	Animal(rhs)
-{
+Dog::Dog(const Dog& rhs) {
 	std::cout << "Dog copy constructor called\n";
+	*this = rhs;
 }
 Dog::~Dog() {
 	std::cout << "Dog destructor called\n";
@@ -31,7 +28,7 @@ Dog& Dog::operator=(const Dog& rhs) {
 	if (this == &rhs) {
 		return *this;
 	}
-	this->type = rhs.type;
+	dynamic_cast<Animal&>(*this) = dynamic_cast<const Animal&>(rhs);
 	return *this;
 }
 

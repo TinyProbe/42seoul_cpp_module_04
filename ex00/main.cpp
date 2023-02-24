@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:13:41 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 02:34:03 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 08:49:48 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int main() {
 	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
 	meta->makeSound();
+	j->makeSound();
+	i->makeSound();
 
 	std::cout << meta->getType() << " " << std::endl;
-	*const_cast<Animal*>(meta) = *dynamic_cast<const Animal*>(j);
+	const_cast<Animal&>(*meta) = dynamic_cast<const Animal&>(*j);
 	std::cout << meta->getType() << " " << std::endl;
 	meta->makeSound();
 	delete i;

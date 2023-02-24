@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:07 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 20:01:15 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:34:38 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ Cat::Cat() :
 	std::cout << "Cat Default constructor called\n";
 	this->type = "Cat";
 }
-Cat::Cat(const Cat& rhs) :
-	Animal(rhs),
-	brain(new Brain())
-{
+Cat::Cat(const Cat& rhs) : brain(new Brain()) {
 	std::cout << "Cat copy constructor called\n";
-	*(this->brain) = *(rhs.brain);
+	*this = rhs;
 }
 Cat::~Cat() {
 	std::cout << "Cat destructor called\n";
@@ -40,6 +37,4 @@ Cat& Cat::operator=(const Cat& rhs) {
 	return *this;
 }
 
-void Cat::makeSound() const {
-	std::cout << "Nyaong!\n";
-}
+void Cat::makeSound() const { std::cout << "Nyaong!\n"; }

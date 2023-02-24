@@ -6,21 +6,18 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:04 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 22:01:35 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:34:27 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() :
-	type("(None)")
-{
+Animal::Animal() : type("(None)") {
 	std::cout << "Animal Default constructor called\n";
 }
-Animal::Animal(const Animal& rhs) :
-	type(rhs.type)
-{
+Animal::Animal(const Animal& rhs) {
 	std::cout << "Animal copy constructor called\n";
+	*this = rhs;
 }
 Animal::~Animal() {
 	std::cout << "Animal destructor called\n";
@@ -34,9 +31,7 @@ Animal& Animal::operator=(const Animal& rhs) {
 	return *this;
 }
 
-const std::string& Animal::getType() const {
-	return this->type;
-}
+const std::string& Animal::getType() const { return this->type; }
 void Animal::makeSound() const {
 	std::cout << "Can't specify what kind of animal\n";
 }
