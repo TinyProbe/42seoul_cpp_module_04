@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 02:49:37 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/16 05:06:26 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 11:13:55 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ MateriaSource::MateriaSource() {
 		this->slot[i] = nullptr;
 	}
 }
-MateriaSource::MateriaSource(const MateriaSource& rhs) {
-	*this = rhs;
-}
+MateriaSource::MateriaSource(const MateriaSource& rhs) { *this = rhs; }
 MateriaSource::~MateriaSource() {
 	for (int i = 0; i < MAX_SLOT; ++i) {
 		if (this->slot[i]) {

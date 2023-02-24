@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:05 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 22:25:10 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:54:41 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ Dog::Dog() :
 	std::cout << "Dog Default constructor called\n";
 	this->type = "Dog";
 }
-Dog::Dog(const Dog& rhs) :
-	Animal(rhs),
-	brain(new Brain())
-{
+Dog::Dog(const Dog& rhs) : brain(new Brain()) {
 	std::cout << "Dog copy constructor called\n";
-	*(this->brain) = *(rhs.brain);
+	*this = rhs;
 }
 Dog::~Dog() {
 	std::cout << "Dog destructor called\n";
@@ -40,9 +37,7 @@ Dog& Dog::operator=(const Dog& rhs) {
 	return *this;
 }
 
-void Dog::makeSound() const {
-	std::cout << "Mung!\n";
-}
+void Dog::makeSound() const { std::cout << "Mung!\n"; }
 void Dog::show() const {
 	for (int i = 0; i < std::min(MAX_IDEA, this->brain->getSize()) - 1; ++i) {
 		std::cout << this->brain->getIdea()[i] << ", ";

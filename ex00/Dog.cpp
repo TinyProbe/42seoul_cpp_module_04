@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:05 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/24 09:55:52 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:44:34 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,4 @@ Dog& Dog::operator=(const Dog& rhs) {
 	return *this;
 }
 
-void Dog::makeSound() const {
-	std::cout << "Mung!\n";
-}
+void Dog::makeSound() const { std::cout << "Mung!\n"; }

@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 00:36:59 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/16 20:50:20 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 11:12:53 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include "AMateria.hpp"
 
 class Ice : public AMateria {
-
-protected:
 
 public:
 	Ice();

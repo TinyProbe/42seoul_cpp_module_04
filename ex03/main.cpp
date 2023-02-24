@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 22:39:13 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/16 05:46:41 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 11:23:29 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int main() {
 	me->use(0, *bob);
 	me->use(1, *bob);
 
-	ICharacter* me2 = new Character(*dynamic_cast<Character*>(me));
-	tmp = dynamic_cast<Character*>(me)->getMateria(0);
+	ICharacter* me2 = new Character(dynamic_cast<Character&>(*me));
+	tmp = dynamic_cast<Character&>(*me).getMateria(0);
 	me->unequip(0);
 	if (tmp) {
 		delete tmp;
 	}
-	tmp = dynamic_cast<Character*>(me)->getMateria(1);
+	tmp = dynamic_cast<Character&>(*me).getMateria(1);
 	me->unequip(1);
 	if (tmp) {
 		delete tmp;

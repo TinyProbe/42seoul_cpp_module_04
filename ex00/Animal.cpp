@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:04 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/24 09:52:13 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:42:22 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ Animal& Animal::operator=(const Animal& rhs) {
 	return *this;
 }
 
-const std::string& Animal::getType() const {
-	return this->type;
-}
-
+const std::string& Animal::getType() const { return this->type; }
 void Animal::makeSound() const {
 	std::cout << "Can't specify what kind of animal\n";
 }

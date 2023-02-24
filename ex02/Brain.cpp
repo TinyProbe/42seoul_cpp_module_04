@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 06:51:56 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/15 22:03:20 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:52:50 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,7 @@ Brain& Brain::operator=(const Brain& rhs) {
 	return *this;
 }
 
-const std::string* Brain::getIdea() const {
-	return this->idea;
-}
-const int& Brain::getSize() const {
-	return this->size;
-}
-void Brain::setIdea(const std::string& idea, const int& idx) {
-	this->idea[idx % MAX_IDEA] = idea;
-}
-void Brain::setSize(const int& size) {
-	this->size = size;
-}
+const std::string* Brain::getIdea() const { return this->idea; }
+const int& Brain::getSize() const { return this->size; }
+void Brain::setIdea(const std::string& idea, const int& idx) { this->idea[idx % MAX_IDEA] = idea; }
+void Brain::setSize(const int& size) { this->size = size; }

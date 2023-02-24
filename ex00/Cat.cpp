@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 01:27:07 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/24 09:55:52 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:44:34 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,4 @@ Cat& Cat::operator=(const Cat& rhs) {
 	return *this;
 }
 
-void Cat::makeSound() const {
-	std::cout << "Nyaong!\n";
-}
+void Cat::makeSound() const { std::cout << "Nyaong!\n"; }

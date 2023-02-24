@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 02:48:27 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/16 05:40:28 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/24 10:57:23 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ Character::Character() : name() {
 		this->slot[i] = nullptr;
 	}
 }
-Character::Character(const Character& rhs) {
-	*this = rhs;
-}
+Character::Character(const Character& rhs) { *this = rhs; }
 Character::Character(const std::string& name) : name(name) {
 	for (int i = 0; i < MAX_SLOT; ++i) {
 		this->slot[i] = nullptr;
@@ -52,9 +50,7 @@ Character& Character::operator=(const Character& rhs) {
 	return *this;
 }
 
-std::string const& Character::getName() const {
-	return this->name;
-}
+std::string const& Character::getName() const { return this->name; }
 AMateria* Character::getMateria(int idx) const {
 	return (idx < 0 || idx >= MAX_SLOT ? nullptr : this->slot[idx]);
 }
